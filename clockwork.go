@@ -5,9 +5,11 @@
 package clockworkmock
 
 import (
-	gomock "github.com/golang/mock/gomock"
 	reflect "reflect"
 	time "time"
+
+	gomock "github.com/golang/mock/gomock"
+	"github.com/jonboulle/clockwork"
 )
 
 // MockClock is a mock of Clock interface
@@ -80,9 +82,9 @@ func (mr *MockClockMockRecorder) Since(t interface{}) *gomock.Call {
 }
 
 // NewTicker mocks base method
-func (m *MockClock) NewTicker(d time.Duration) Ticker {
+func (m *MockClock) NewTicker(d time.Duration) clockwork.Ticker {
 	ret := m.ctrl.Call(m, "NewTicker", d)
-	ret0, _ := ret[0].(Ticker)
+	ret0, _ := ret[0].(clockwork.Ticker)
 	return ret0
 }
 
@@ -161,9 +163,9 @@ func (mr *MockFakeClockMockRecorder) Since(t interface{}) *gomock.Call {
 }
 
 // NewTicker mocks base method
-func (m *MockFakeClock) NewTicker(d time.Duration) Ticker {
+func (m *MockFakeClock) NewTicker(d time.Duration) clockwork.Ticker {
 	ret := m.ctrl.Call(m, "NewTicker", d)
-	ret0, _ := ret[0].(Ticker)
+	ret0, _ := ret[0].(clockwork.Ticker)
 	return ret0
 }
 
