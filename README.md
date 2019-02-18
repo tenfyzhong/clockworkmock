@@ -1,3 +1,3 @@
 # clockworkmock
 
-github.com/jonboulle/clockwork的接口mock
+mock github.com/jonboulle/clockwork
